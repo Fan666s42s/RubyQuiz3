@@ -21,9 +21,23 @@
   D = delete
 ```
 
-4.請問在 routes.rb 裡面加入以下程式碼會產生出哪一些 url？ (提示：在 browser 輸入http://localhost:3000/rails/info/routes)
+4.請問在 routes.rb 裡面加入以下程式碼會產生出哪一些 url？ 
+```ruby
+		resources :users
 ```
+(提示：在 browser 輸入http://localhost:3000/rails/info/routes)
   
+```ruby
+
+  get '/users', to: 'users#index'
+  post '/users', to: 'users#create'
+  get '/users/new', to: 'users#new'
+  get '/users/:id/edit', to: 'users#edit'
+  get '/users/:id', to: 'users#show'
+  patch 'users/:id', to: 'users#update'
+  put 'users/:id', to: 'users#update'
+  delete 'users/:id' to: 'users#delete'
+
 ```
 
 5.請解釋 model 檔案和 migration 檔案的差別
